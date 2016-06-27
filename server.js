@@ -12,7 +12,7 @@ var env             = require('./config/environment');
 var mongoose        = require('./config/database');
 var routes          = require('./config/routes');
 var passportConfig  = require('./config/passport');
-var materialize     = require('materialize');
+
 
 // Instantiate a server application.
 var app = express();

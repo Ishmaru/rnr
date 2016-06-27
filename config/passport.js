@@ -15,19 +15,15 @@ passport.use(new InstagramStrategy({
       if (user) {
         console.log("User Found!")
         user.accessToken = accessToken;
-        user.save(function(err, user) {
-          if (err) { return done(err); };
-          console.log(user.accessToken === accessToken);
-          return done(null, user);
-        })
+        return done(null, user);
       };
       var newUser = new User({
         name: profile.displayName,
-        instagramId: profile.id,
-        accessToken: accessToken
+        instagramId: profile.id
       });
-        newUser.save(function(err){
+      newUser.save(function(err){
         if (err) { return done(err) };
+        newUser.accessToken = accessToken;
         return done(null, newUser);
       });
     });

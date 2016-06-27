@@ -14,6 +14,9 @@ var usersController = require('../controllers/users');
 // router.get('/users/:id', usersController.show);
 
 router.get('/', function(req, res, next) {
+  if (req.user) {
+    console.log("access" + req.user.accessToken);
+  };
   res.render('../views/pages/welcome', { user: req.user });
 });
 

@@ -5,6 +5,7 @@ var userSchema = new mongoose.Schema({
   name:        String,
   email:       String,
   instagramId: String,
+  accessToken: String,
   created: { type: Date, default: Date.now }
 });
 

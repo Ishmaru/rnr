@@ -8,15 +8,24 @@ passport.use(new InstagramStrategy({
     callbackURL: process.env.CALLBACK_URI
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log(profile);
+    // console.log(profile);
+    if (!accessToken) return done(err);
     User.findOne({ instagramId: profile.id}, function(err, user){
       if (err)  { return done(err) };
-      if (user) { return done(null, user)};
+      if (user) {
+        console.log("User Found!")
+        user.accessToken = accessToken;
+        user.save(function(err, user) {
+          if (err) { return done(err); };
+          console.log(user.accessToken === accessToken);
+          return done(null, user);
+        })
+      };
       var newUser = new User({
         name: profile.displayName,
-        instagramId: profile.id
+        instagramId: profile.id,
+        accessToken: accessToken
       });
-        console.log(newUser);
         newUser.save(function(err){
         if (err) { return done(err) };
         return done(null, newUser);
@@ -36,6 +45,7 @@ passport.serializeUser(function(user, done) {
 // and attaches it to req
 passport.deserializeUser(function(id, done) {
   User.findById(id, function(err, user) {
+    // console.log(user);
     done(err, user);
   });
 });

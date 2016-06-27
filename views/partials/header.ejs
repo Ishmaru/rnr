@@ -1,0 +1,11 @@
+<header>
+  <h1><%= title %></h1>
+  <h2><%= subHeading %></h2>
+  <% if(user) { %>
+      <span>Welcome!<%= user.name %></span>
+      <a href="/logout">Logout</a>
+  <% } else { %>
+      <a href = "/auth/instagram">Login with Instagram!</a>
+  <% } %>
+  <hr>
+</header>

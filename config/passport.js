@@ -33,7 +33,6 @@ passport.use(new InstagramStrategy({
   }
 ));
 
-
 // configure serializeUser
 // putting user id in session
 passport.serializeUser(function(user, done) {

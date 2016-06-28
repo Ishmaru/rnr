@@ -1,8 +1,10 @@
 var passport = require('passport');
-var FacebookStrategy = require('passport-instagram').Strategy;
+var InstagramStrategy = require('passport-instagram').Strategy;
 var User = require('../models/user');
 
-passport.use(new instagramStrategy({
+// arbitrary comment
+
+passport.use(new InstagramStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     callbackURL: process.env.CALLBACK_URI
@@ -10,7 +12,7 @@ passport.use(new instagramStrategy({
   function(accessToken, refreshToken, profile, done) {
     // console.log(profile);
     if (!accessToken) return done(err);
-    User.findOne({ facenookId: profile.id}, function(err, user){
+    User.findOne({ instagramId: profile.id}, function(err, user){
       if (err)  { return done(err) };
       if (user) {
         console.log("User Found!")
@@ -20,7 +22,7 @@ passport.use(new instagramStrategy({
       };
       var newUser = new User({
         name: profile.displayName,
-        facebookId: profile.id
+        instagramId: profile.id
       });
       newUser.save(function(err){
         if (err) { return done(err) };
@@ -30,7 +32,6 @@ passport.use(new instagramStrategy({
     });
   }
 ));
-
 
 // configure serializeUser
 // putting user id in session

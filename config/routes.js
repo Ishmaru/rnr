@@ -20,11 +20,11 @@ router.get('/', function(req, res, next) {
   res.render('../views/pages/welcome', { user: req.user });
 });
 
-router.get('/auth/facebook',
-  passport.authenticate('facebook'));
+router.get('/auth/instagram',
+  passport.authenticate('instagram', { scope: ['public_content', 'follower_list']}));
 
-router.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/login' }),
+router.get('/auth/instagram/callback',
+  passport.authenticate('instagram', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/');
@@ -34,7 +34,5 @@ router.get('/logout', function(req, res){
   req.logOut();
   res.redirect('/');
 });
-
-
 
 module.exports = router;

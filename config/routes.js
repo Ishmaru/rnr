@@ -6,6 +6,7 @@ var request  = require('request');
 // Require controllers.
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
+var instaHelp       = require('../helpers/instagram_api_helper');
 
 // root path:
 // router.get('/', pagesController.welcome);
@@ -35,5 +36,8 @@ router.get('/logout', function(req, res){
   req.logOut();
   res.redirect('/');
 });
+
+// Instagram Helper Routes
+router.get('/api/likes', instaHelp.grabLiked);
 
 module.exports = router;

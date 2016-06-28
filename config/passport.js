@@ -2,7 +2,7 @@ var passport = require('passport');
 var InstagramStrategy = require('passport-instagram').Strategy;
 var User = require('../models/user');
 var request = require('request');
-
+var locus = require('locus');
 // arbitrary comment
 
 passport.use(new InstagramStrategy({
@@ -16,19 +16,24 @@ passport.use(new InstagramStrategy({
     User.findOne({ instagramId: profile.id}, function(err, user){
       if (err)  { return done(err) };
       if (user) {
-        console.log("User Found!")
-        user.accessToken = accessToken;
-        grabLiked(accessToken);
-        console.log(user);
-        return done(null, user);
+        if (user.accessToken != accessToken) {
+          user.accessToken = accessToken;
+          user.save(function(err, user) {
+            if (err) return done(err);
+            return done(null, user);
+          });
+        } else {
+          console.log("Access Token did not change!");
+          return done(null, user);
+        }
       };
       var newUser = new User({
         name: profile.displayName,
-        instagramId: profile.id
+        instagramId: profile.id,
+        accessToken: accessToken
       });
       newUser.save(function(err){
         if (err) { return done(err) };
-        newUser.accessToken = accessToken;
         return done(null, newUser);
       });
     });
@@ -49,16 +54,3 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
-
-function grabLiked(token) {
-  request.get(`https://api.instagram.com/v1/users/self/media/liked?access_token=${token}`, function(err, response, body) {
-    var userData = JSON.parse(body);
-    console.log(userData.data);
-    return userData;
-  });
-}
-
-
-module.exports = {
-  grab: grabLiked
-}

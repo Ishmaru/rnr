@@ -10,7 +10,7 @@ var usersController = require('../controllers/users');
 // router.get('/', pagesController.welcome);
 
 // users resource paths:
-// router.get('/users',     usersController.index);
+// router.get('/users',     pagesController.index);
 // router.get('/users/:id', usersController.show);
 
 router.get('/', function(req, res, next) {

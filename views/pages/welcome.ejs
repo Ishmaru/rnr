@@ -7,9 +7,13 @@
   <%- include('../partials/header', {subHeading: 'Welcome'}) %>
 
   <main>
-    <ul>
-<!--       <li><a href="/users">Visit the user list.</a></li> -->
-    </ul>
+    <% if (user) { %>
+        <%= user.name %>
+
+    <% } else { %>
+
+
+    <% } %>
   </main>
 
   <%- include('../partials/scripts') %>

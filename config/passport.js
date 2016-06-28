@@ -18,7 +18,7 @@ passport.use(new InstagramStrategy({
       if (user) {
         console.log("User Found!")
         user.accessToken = accessToken;
-        // grabLiked(accessToken);
+        grabLiked(accessToken);
         console.log(user);
         return done(null, user);
       };
@@ -50,16 +50,15 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-// function grabLiked(token) {
-//   request.get(`https://api.instagram.com/v1/users/self/media/liked?access_token=${token}`, function(err, response, body) {
-//     var userData = JSON.parse(body);
-//     // user.userData = JSON.parse(body);
-//     console.log(userData.data);
-//     return userData;
-//   });
-// }
+function grabLiked(token) {
+  request.get(`https://api.instagram.com/v1/users/self/media/liked?access_token=${token}`, function(err, response, body) {
+    var userData = JSON.parse(body);
+    console.log(userData.data);
+    return userData;
+  });
+}
 
 
-// module.exports = {
-//   grab: grabLiked
-// }
+module.exports = {
+  grab: grabLiked
+}

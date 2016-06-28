@@ -14,6 +14,7 @@
     "ejs": "~2.3.3",
     "express": "~4.13.1",
     "express-session": "^1.13.0",
+    "locus": "^1.2.0",
     "lodash": "^3.10.1",
     "mongoose": "^4.1.1",
     "morgan": "~1.6.1",

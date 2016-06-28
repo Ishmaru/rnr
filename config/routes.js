@@ -6,6 +6,7 @@ var request  = require('request');
 // Require controllers.
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
+var instaHelp       = require('../helpers/instagram_api_helper');
 
 // root path:
 // router.get('/', pagesController.welcome);
@@ -31,15 +32,12 @@ router.get('/auth/instagram/callback',
     res.redirect('/');
   });
 
-// function getData() {
-//   request.get(`https://api.instagram.com/v1/users/self/media/liked?access_token=${req.user.accessToken}`, function(err, response, body) {
-//     console.log(body);
-//   });
-// };
-
 router.get('/logout', function(req, res){
   req.logOut();
   res.redirect('/');
 });
+
+// Instagram Helper Routes
+router.get('/api/likes', instaHelp.grabLiked);
 
 module.exports = router;

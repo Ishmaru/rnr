@@ -2,6 +2,8 @@ var passport = require('passport');
 var InstagramStrategy = require('passport-instagram').Strategy;
 var User = require('../models/user');
 
+// arbitrary comment
+
 passport.use(new InstagramStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,

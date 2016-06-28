@@ -15,6 +15,7 @@ passport.use(new InstagramStrategy({
       if (user) {
         console.log("User Found!")
         user.accessToken = accessToken;
+        console.log(user.accessToken);
         return done(null, user);
       };
       var newUser = new User({

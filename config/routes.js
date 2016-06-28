@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/auth/instagram',
-  passport.authenticate('instagram'));
+  passport.authenticate('instagram', { scope: ['public_content', 'follower_list']}));
 
 router.get('/auth/instagram/callback',
   passport.authenticate('instagram', { failureRedirect: '/login' }),

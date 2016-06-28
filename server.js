@@ -12,6 +12,7 @@ var env             = require('./config/environment');
 var mongoose        = require('./config/database');
 var routes          = require('./config/routes');
 var passportConfig  = require('./config/passport');
+var request         = require('request');
 
 
 // Instantiate a server application.

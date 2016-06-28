@@ -1,6 +1,7 @@
 var express = require('express');
 var router  = new express.Router();
 var passport = require('passport');
+var request  = require('request');
 
 // Require controllers.
 var pagesController = require('../controllers/pages');

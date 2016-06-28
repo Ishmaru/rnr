@@ -1,8 +1,8 @@
 var passport = require('passport');
-var FacebookStrategy = require('passport-facebook').Strategy;
+var FacebookStrategy = require('passport-instagram').Strategy;
 var User = require('../models/user');
 
-passport.use(new FacebookStrategy({
+passport.use(new instagramStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     callbackURL: process.env.CALLBACK_URI
@@ -15,6 +15,7 @@ passport.use(new FacebookStrategy({
       if (user) {
         console.log("User Found!")
         user.accessToken = accessToken;
+        console.log(user.accessToken);
         return done(null, user);
       };
       var newUser = new User({

@@ -1,8 +1,8 @@
 var passport = require('passport');
-var InstagramStrategy = require('passport-instagram').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 var User = require('../models/user');
 
-passport.use(new InstagramStrategy({
+passport.use(new FacebookStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     callbackURL: process.env.CALLBACK_URI
@@ -10,7 +10,7 @@ passport.use(new InstagramStrategy({
   function(accessToken, refreshToken, profile, done) {
     // console.log(profile);
     if (!accessToken) return done(err);
-    User.findOne({ instagramId: profile.id}, function(err, user){
+    User.findOne({ facenookId: profile.id}, function(err, user){
       if (err)  { return done(err) };
       if (user) {
         console.log("User Found!")
@@ -19,7 +19,7 @@ passport.use(new InstagramStrategy({
       };
       var newUser = new User({
         name: profile.displayName,
-        instagramId: profile.id
+        facebookId: profile.id
       });
       newUser.save(function(err){
         if (err) { return done(err) };

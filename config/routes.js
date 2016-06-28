@@ -31,6 +31,12 @@ router.get('/auth/instagram/callback',
     res.redirect('/');
   });
 
+// function getData() {
+//   request.get(`https://api.instagram.com/v1/users/self/media/liked?access_token=${req.user.accessToken}`, function(err, response, body) {
+//     console.log(body);
+//   });
+// };
+
 router.get('/logout', function(req, res){
   req.logOut();
   res.redirect('/');

@@ -1,6 +1,7 @@
 var passport = require('passport');
 var InstagramStrategy = require('passport-instagram').Strategy;
 var User = require('../models/user');
+var request = require('request');
 
 // arbitrary comment
 
@@ -17,6 +18,7 @@ passport.use(new InstagramStrategy({
       if (user) {
         console.log("User Found!")
         user.accessToken = accessToken;
+        // grabLiked(accessToken);
         console.log(user);
         return done(null, user);
       };
@@ -47,3 +49,17 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
+
+// function grabLiked(token) {
+//   request.get(`https://api.instagram.com/v1/users/self/media/liked?access_token=${token}`, function(err, response, body) {
+//     var userData = JSON.parse(body);
+//     // user.userData = JSON.parse(body);
+//     console.log(userData.data);
+//     return userData;
+//   });
+// }
+
+
+// module.exports = {
+//   grab: grabLiked
+// }

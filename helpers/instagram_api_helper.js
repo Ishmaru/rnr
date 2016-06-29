@@ -25,5 +25,5 @@ function grabLatLng(req, res, next, likedId) {
 
 module.exports = {
   grabLiked: grabLiked,
-  grabLiked: grabLatLng
+  // grabLiked: grabLatLng
 }

@@ -39,6 +39,6 @@ router.get('/logout', function(req, res){
 
 // Instagram Helper Routes
 router.get('/api/likes', instaHelp.grabLiked);
-router.get('/api/likes/_id', instaHelp.grabLiked);
+// router.get('/api/likes/_id', instaHelp.grabLiked);
 
 module.exports = router;

@@ -7,11 +7,33 @@
   <%- include('../partials/header', {subHeading: 'Welcome'}) %>
 
   <main>
-    <ul>
-<!--       <li><a href="/users">Visit the user list.</a></li> -->
-    </ul>
-  </main>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+          <h2 class="header center col s12 light">Modern &middot; Instant &middot; Helpful </h5>
+        <div class="row center">
+          <h5 class="header center col s12 light">Use your Instagram likes to figure out where to get some R & R</h5>
+        </div>
+
+        <br><br>
+
+      </div>
+    </div>
+  </div>
+<br>
+  <div class="row center">
+        <ul id="nav-mobile" class="center">
+
+                      <li><a href ="/auth/instagram" class="waves-effect waves-light btn s4 m4 l4">Login with Instagram!</a></li>
+
+        </ul>
 
   <%- include('../partials/scripts') %>
+  </div>
+
+</main>
+
 </body>
 </html>

@@ -8,8 +8,6 @@ var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
 var instaHelp       = require('../helpers/instagram_api_helper');
 
-// root path:
-// router.get('/', pagesController.welcome);
 
 // users resource paths:
 // router.get('/users',     usersController.index);
@@ -36,6 +34,9 @@ router.get('/logout', function(req, res){
   req.logOut();
   res.redirect('/');
 });
+
+// root path:
+router.get('/contact', pagesController.contact);
 
 // Instagram Helper Routes
 router.get('/api/likes', instaHelp.grabLiked);

@@ -13,6 +13,7 @@ var mongoose        = require('./config/database');
 var routes          = require('./config/routes');
 var passportConfig  = require('./config/passport');
 var request         = require('request');
+var _               = require('lodash');
 
 
 // Instantiate a server application.

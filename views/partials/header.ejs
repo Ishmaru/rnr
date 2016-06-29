@@ -1,20 +1,21 @@
 <header>
 
-<!-- <div class="container">
-  <div class="navbar-fixed"> -->
-    <nav>
-      <div class="nav-wrapper">
-        <span class="brand-logo left col s12 m4 l4">RnR</span>
-        <ul id="nav-mobile" class="right">
+  <nav class="deep-purple lighten-2" role="navigation">
+
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo left-align">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Contact</a></li>
+        <li >
           <% if (user) { %>
-            <li class="col hide-on-small-only m4 l4">Welcome <%= user.name %> </li>
-            <li><a href="/logout" class="waves-effect waves-light btn col s4 m4 l4">Logout</a></li>
-          <% } else { %>
-            <li><a href ="/auth/instagram" class="waves-effect waves-light btn s4 m4 l4">Login with Instagram!</a></li>
+                    <li class="col hide-on-small-only m4 l4">Welcome, <%= user.name %> </li>
+                    <li><a href="/logout" class="waves-effect waves-light btn col s4 m4 l4 right-align">Logout</a></li>
           <% } %>
-        </ul>
-      </div>
-    </nav>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
 
 </header>
 

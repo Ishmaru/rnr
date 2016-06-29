@@ -1,5 +1,6 @@
 var request = require('request');
 var locus   = require('locus');
+var User = require('../models/user');
 
 function grabLiked(req, res, next) {
   request.get(`https://api.instagram.com/v1/users/self/media/liked?access_token=${req.user.accessToken}`, function(err, response, body) {
@@ -10,7 +11,19 @@ function grabLiked(req, res, next) {
   });
 }
 
+function grabLatLng(req, res, next, likedId) {
+  request.get(`https://api.instagram.com/v1/users/self/media/liked?access_token=${req.user.accessToken}`, function(err, response, body) {
+    var loaction = body.response.data.likes[likedId].location.map(function(venue) {
+          return {
+            lat: location.name,
+            lng:  location.url
+          };
+        })
+  })
+}
+
 
 module.exports = {
-  grabLiked: grabLiked
+  grabLiked: grabLiked,
+  grabLiked: grabLatLng
 }

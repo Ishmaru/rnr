@@ -15,7 +15,12 @@ router.get('/', function(req, res, next) {
   res.render('../views/pages/welcome', { user: req.user, apikey: process.env.GOOGLE_API_KEY });
 });
 
-router.get('/contact', pagesController.contact);
+router.get('/contact', function(req, res, next) {
+
+  res.render('../views/pages/contact', { user: req.user});
+});
+
+// router.get('/contact', pagesController.contact);
 
 router.get('/auth/instagram',
   passport.authenticate('instagram', { scope: ['public_content', 'follower_list']}));

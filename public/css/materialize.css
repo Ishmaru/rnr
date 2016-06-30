@@ -2860,6 +2860,8 @@ video.responsive-video {
   height: 350px;
   background-image: url("https://static.pexels.com/photos/3847/jetty-landing-stage-sea-sky.jpeg");
   background-size: cover;
+  /*background-position: center;*/
+  background-position: 100% 20%;
 }
 
 .parallax {
@@ -8177,7 +8179,15 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 .three-container {
   margin: 0 auto;
-  max-width: 500px;
-  border: 1px solid green;
+  max-width: 600px;
+  /*border: 1px solid green;*/
   display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.img-circle {
+ border-radius: 50%;
+ width: 400px;
+ height: auto;
 }

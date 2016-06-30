@@ -8,19 +8,14 @@ var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
 var instaHelp       = require('../helpers/instagram_api_helper');
 
-// root path:
-// router.get('/', pagesController.welcome);
-
-// users resource paths:
-// router.get('/users',     usersController.index);
-// router.get('/users/:id', usersController.show);
-
 router.get('/', function(req, res, next) {
   if (req.user) {
     console.log("access" + req.user.accessToken);
   };
   res.render('../views/pages/welcome', { user: req.user, apikey: process.env.GOOGLE_API_KEY });
 });
+
+router.get('/contact', pagesController.contact);
 
 router.get('/auth/instagram',
   passport.authenticate('instagram', { scope: ['public_content', 'follower_list']}));

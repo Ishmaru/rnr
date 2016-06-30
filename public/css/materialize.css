@@ -8174,3 +8174,10 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     margin-bottom: 5em;
   }
 }
+
+.three-container {
+  margin: 0 auto;
+  max-width: 500px;
+  border: 1px solid green;
+  display: inline-block;
+}

@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
   if (req.user) {
     console.log("access" + req.user.accessToken);
   };
-  res.render('../views/pages/welcome', { user: req.user });
+  res.render('../views/pages/welcome', { user: req.user, apikey: process.env.GOOGLE_API_KEY });
 });
 
 router.get('/auth/instagram',

@@ -12,7 +12,7 @@ var instaPicsTemplate = `
                 <span class="card-title"><%= like[1].name %></span>
               </div>
               <div class="card-content">
-                <div style="width: 300px; height: 250px" id="map-<%= idx %>">
+                <div style="max-width: 695px; height: 300px" id="map-<%= idx %>">
                 </div>
               </div>
             </div>

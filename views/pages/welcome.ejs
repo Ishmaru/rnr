@@ -5,46 +5,48 @@
 </head>
 <body>
   <%- include('../partials/header', {subHeading: 'Welcome'}) %>
+  <div class="<%= user ? "container" : " " %>">
 
-<main>
-  <% if (!user) { %>
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-          <h2 class="header center col s12 light">Modern &middot; Instant &middot; Helpful </h5>
-        <div class="row center">
-          <h5 class="header center col s12 light">Use your Instagram likes to figure out where to get some R & R</h5>
+
+    <main>
+      <% if (!user) { %>
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+              <h2 class="header center col s12 light">Modern &middot; Instant &middot; Helpful </h5>
+            <div class="row center">
+              <h5 class="header center col s12 light">Use your Instagram likes to figure out where to get some R & R</h5>
+            </div>
+
+            <br><br>
+
+          </div>
         </div>
-
-        <br><br>
-
       </div>
-    </div>
+      <br>
+      <div class="row center">
+            <ul id="nav-mobile" class="center">
+
+                <li><a href ="/auth/instagram" class="waves-effect waves-light btn s4 m4 l4">Login with Instagram!</a></li>
+
+            </ul>
+      </div>
+
+      <% } else { %>
+       <div id="insta-pics" class="row">
+         <!-- insert photos here -->
+       </div>
+      <% } %>
+
+
+
+      <%- include('../partials/scripts') %>
+      <% if (user) { %>
+        <script>render();</script>
+      <% } %>
+
+    </main>
   </div>
-  <br>
-  <div class="row center">
-        <ul id="nav-mobile" class="center">
-
-            <li><a href ="/auth/instagram" class="waves-effect waves-light btn s4 m4 l4">Login with Instagram!</a></li>
-
-        </ul>
-  </div>
-
-  <% } else { %>
-   <div id="insta-pics" class="row">
-     <!-- insert photos here -->
-   </div>
-  <% } %>
-
-
-
-  <%- include('../partials/scripts') %>
-  <% if (user) { %>
-    <script>render();</script>
-  <% } %>
-
-</main>
-
 </body>
 </html>

@@ -3,12 +3,12 @@
   <nav class="deep-purple lighten-2" role="navigation">
 
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo left-align">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Contact</a></li>
+      <a id="logo-container" href="#" class="brand-logo left">Logo</a>
+      <ul class="right">
+        <li><a href="#" class="hide-on-small-only">Contact</a></li>
         <li >
           <% if (user) { %>
-                    <li class="col hide-on-small-only m4 l4">Welcome, <%= user.name %> </li>
+                    <li class="col m4 l4">Welcome, <%= user.name %> </li>
                     <li><a href="/logout" class="waves-effect waves-light btn col s4 m4 l4 right-align">Logout</a></li>
           <% } %>
         </li>

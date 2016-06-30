@@ -8180,3 +8180,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   border: 1px solid green;
   display: inline-block;
 }
+
+.img-circle {
+  border-radius: 50%;
+}

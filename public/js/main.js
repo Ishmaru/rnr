@@ -9,7 +9,7 @@ var instaPicsTemplate = `
             <div class="card">
               <div class="card-image">
                 <img src="<%= like[0] %>">
-                <span class="card-title"><%= like[1].name %></span>
+                <span class="card-title"><%= like[1] ? like[1].name : "" %></span>
               </div>
               <div class="card-content">
                 <div style="max-width: 695px; height: 300px" id="map-<%= idx %>">

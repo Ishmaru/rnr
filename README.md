@@ -17,6 +17,16 @@ RnR allows you to organize your vacation destination ideas into collections for 
 
 In addition, RnR gives you Google map directions to your saved locations so that you can see what sites might be nearby, where to visit when you're finally there, and maybe connect a couple of local destinations all into one stay.
 
+App Screenshot:  
+[<img src="https://github.com/CJZamora83/rnr/blob/contact/public/images/rnr_screenshot.jpg">](http://www.courtalert.com/images/cmecfDiary.gif/)
+
+##Trello
+[Trello] (https://trello.com/b/TRRC7VJK/rnr)  
+
+##To RNR and Beyond  
+
+[RNR] (https://enigmatic-inlet-27771.herokuapp.com/)  
+
 ##Team RnR  
 > Adrian D.  
 > Jacob A.  
@@ -27,27 +37,27 @@ In addition, RnR gives you Google map directions to your saved locations so that
 Some of the technologies we've utilized and implemented in the development of our RnR app are:  
 
 #### Front-End  
-> HTML5 / CSS3  
-> *Materialize* framework
-> jQuery  
-> Vanilla Javascript
+>- HTML5 / CSS3  
+>- *Materialize* framework
+>- jQuery  
+>- Vanilla Javascript
 
 ####Back-End  
-> OAuth 2.0  
-> Passport  
-> Lodash
-> _Instagram_ API  
-> _Google Map_ API
-> Express
-> Mongoose
-> MongoDB
-> Node.js
-> Locus
+>- OAuth 2.0  
+>- Passport  
+>- Lodash
+>- _Instagram_ API  
+>- _Google Map_ API
+>- Express
+>- Mongoose
+>- MongoDB
+>- Node.js
+>- Locus
 
-####Many Thanks and Gratitude to...
-> Jim Clark  
-> Ezra Raez  
-> Anyone who puts up with us and our craziness  
+####Many Thanks and Gratitude to the Contributors...
+>- [Ezra Raez](https://github.com/EARnagram)        
+>- [Jim Clark](https://github.com/jim-clark) 
+>* Anyone who puts up with us and our craziness  
 
 
 ##Future Implementations and Other Ideas  

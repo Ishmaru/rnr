@@ -19,7 +19,6 @@
     "mongoose": "^4.1.1",
     "morgan": "~1.6.1",
     "passport": "^0.3.2",
-    "passport-facebook": "^2.1.1",
     "passport-instagram": "^1.0.0",
     "passport-instagram-token": "^2.3.0",
     "request": "^2.72.0",

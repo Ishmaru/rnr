@@ -71,14 +71,18 @@ $(function() {
 })
 
 function swapButton(button) {
-  if (button.hasClass('edit')) {
-    button.removeClass('edit');
-    button.addClass('submit');
-  } else if (button.hasClass('submit')) {
-    button.removeClass('submit');
-    button.addClass('edit');
-    // editUserName()
-  }
+  setTimeout(function(){
+    console.log(button);
+    if (button.hasClass('edit')) {
+      button.removeClass('edit');
+      button.addClass('submit');
+      button.text('add');
+    } else if (button.hasClass('submit')) {
+      button.removeClass('submit');
+      button.addClass('edit');
+      button.text('mode_edit');
+    }
+  }, 500)
 };
 
 function editUsername(id, editUserdata) {

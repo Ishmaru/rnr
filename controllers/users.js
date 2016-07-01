@@ -38,9 +38,20 @@ function update(req, res, next) {
   });
 }
 
+var destroy = function(req, res) {
+  var id = req.params.id;
+
+  User.remove({"_id" : id}, function(err) {
+    if (err) {
+      res.send(err);
+    }
+    res.json({message: 'Deleted'});
+  });
+}
 
 module.exports = {
   index: index,
   show: show,
-  update: update
+  update: update,
+  destroy: destroy
 }

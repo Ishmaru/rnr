@@ -42,6 +42,6 @@ router.get('/api/likes', instaHelp.grabLiked);
 router.get('/api/users', usersController.index);
 router.get('/api/users/:id', usersController.show);
 router.put('/api/users/:id', usersController.update);
-// router.get('/api/likes/_id', instaHelp.grabLiked);
+router.delete('/api/users/:id', usersController.destroy);
 
 module.exports = router;

@@ -8,7 +8,7 @@
         <li><a href="/contact" class="waves-effect waves-light btn col s4 m4 l4 right-align hide-on-small-only">Contact</a></li>
         <li class="unique">
           <% if (user) { %>
-            <a class="btn-floating btn-large waves-effect waves-light green right-align"><i id="<%= user._id %>"class="material-icons edit button-color">mode_edit</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light right-align"><i id="<%= user._id %>"class="material-icons edit button-color">mode_edit</i></a>
             <span class="col m4 l4" id="Welcome">Welcome, <%= user.name %> </span>
             <a class="btn-floating btn-large waves-effect waves-light green right-align"><i id="<%= user._id %>"class="material-icons delete button-color">delete</i></a>
             <li class="hide col m4 l4 name-form">

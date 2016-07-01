@@ -57,6 +57,7 @@ $(function() {
   $(".edit").on( "click", function(){
     $(".name-form").removeClass("hide");
     $("#Welcome").addClass("hide");
+    $(".green").addClass("hide");
     swapButton($(this));
   })
 
@@ -67,6 +68,8 @@ $(function() {
     $(".name-form").addClass("hide");
     $('span#Welcome').text(`Welcome, ${updateUserName.name}`);
     $("#Welcome").removeClass("hide");
+    $(".green").removeClass("hide");
+
   });
 
   $(".unique").on( "click", ".delete", function() {

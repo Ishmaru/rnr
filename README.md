@@ -74,6 +74,13 @@ Lists an array of your latest likes and their data. Each liked item is an array 
 
 ####key values: 
 
+|Routes|HTTP|
+|:--:|:--:|
+|likes|/api/likes|
+|likes|/api/likes|
+|likes|/api/likes|
+|likes|/api/likes|
+
 `likes[<index of like>][0]` = Image src url
 
 `likes[<index of like>][1]` = Location Object { latitude, name, longitude, id }

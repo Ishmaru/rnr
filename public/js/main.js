@@ -67,7 +67,15 @@ $(function() {
     $(".name-form").addClass("hide");
     $('span#Welcome').text(`Welcome, ${updateUserName.name}`);
     $("#Welcome").removeClass("hide");
-  })
+  });
+
+  $(".unique").on( "click", ".delete", function() {
+    var selectedId = $(this).attr('id');
+    console.log(selectedId);
+    if (confirm("Are you sure you want to delete your account?")) {
+      deleteAccount(selectedId);
+    }
+  });
 })
 
 function swapButton(button) {
@@ -97,4 +105,14 @@ function editUsername(id, editUserdata) {
   });
 }
 
-
+function deleteAccount(id) {
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/users/${id}`
+  }).then(function(msg) {
+    console.log(msg);
+    window.location = '/';
+  }, function(err) {
+    console.log(err);
+  })
+}

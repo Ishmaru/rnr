@@ -10,6 +10,7 @@
           <% if (user) { %>
             <a class="btn-floating btn-large waves-effect waves-light green right-align"><i id="<%= user._id %>"class="material-icons edit button-color">mode_edit</i></a>
             <span class="col m4 l4" id="Welcome">Welcome, <%= user.name %> </span>
+            <a class="btn-floating btn-large waves-effect waves-light green right-align"><i id="<%= user._id %>"class="material-icons delete button-color">delete</i></a>
             <li class="hide col m4 l4 name-form">
               <div class="input-field">
                 <input value="<%= user.name %>" id="first_name2" type="text" class="validate">

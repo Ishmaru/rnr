@@ -17,7 +17,7 @@ RnR allows you to organize your vacation destination ideas into collections for 
 In addition, RnR gives you Google map directions to your saved locations so that you can see what sites might be nearby, where to visit when you're finally there, and maybe connect a couple of local destinations all into one stay.
 
 App Screenshot:  
-[_Roam Around the World_ - B-52's](https://github.com/CJZamora83/rnr/blob/contact/public/images/rnr_screenshot.jpg"/)
+[_Roam Around the World_ - B-52's](https://raw.githubusercontent.com/CJZamora83/rnr/contact/public/images/rnr_screenshot.jpg"/)
 
 ##Trello
 [Trello] (https://trello.com/b/TRRC7VJK/rnr)  

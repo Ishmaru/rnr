@@ -17,7 +17,7 @@ RnR allows you to organize your vacation destination ideas into collections for 
 In addition, RnR gives you Google map directions to your saved locations so that you can see what sites might be nearby, where to visit when you're finally there, and maybe connect a couple of local destinations all into one stay.
 
 App Screenshot:  
-[<https://raw.githubusercontent.com/CJZamora83/rnr/contact/public/images/rnr_screenshot.jpg">]([<https://raw.githubusercontent.com/CJZamora83/rnr/contact/public/images/rnr_screenshot.jpg"/)
+![RNR](https://raw.githubusercontent.com/Ishmaru/rnr/master/public/images/rnr_screenshot.jpg)
 _Roam Around the World_ - B-52's
 
 ##Trello
@@ -64,36 +64,37 @@ Some of the technologies we've utilized and implemented in the development of ou
 
 #### Note you need to be logged in to via instagram use our API.
 
-### Endpoint - api/likes  
+### Api/likes  
 Lists an array of your latest likes and their data. Each liked item is an array of vaues.
 
 `likes[[imgUrl, { latitude, name, longitude, id }, uploader], [imgUrl, { latitude, name, longitude, id }, uploader] ...]`
 
-####key values: 
+#### End points: 
 
 |Routes|HTTP|
 |:--:|:--:|
 |likes|/api/likes|
-|likes|/api/likes|
-|likes|/api/likes|
-|likes|/api/likes|
+|show like|/api/likes/id|
 
-`likes[<index of like>][0]` = Image src url
+#### Index Values:
+#####Note: A given like will return as an array of values.
 
-`likes[<index of like>][1]` = Location Object { latitude, name, longitude, id }
+|index|Use|
+|:--:|:--:|
+|[0]|Img Source URL|
+|[1]|A location Object|
+|[2]|Uploader Name|
 
-`likes[<index of like>][1].latitude` = Latitude coordinates 
+#### Key Values:
 
-`likes[<index of like>][1].name` = Location Name
- 
-`likes[<index of like>][1].longitude` = Longitude coordinates 
+|Key Value|Use|
+|:--|:--:|
+|.latitude|Image latitude value|
+|.longitude|Image Longitude value|
+|.name|Location name|
+|.id|Instagram post id|
 
-`likes[<index of like>][1].id` = Instagram's Id of the post
-
-`likes[<index of like>][2]` = Uploader's name
-
-#####Note:
-Some Instagram Posts may not contain location data. In this case `likes[<index of like>][1]` will return _null_
+#####Note: Some Instagram Posts may not contain location data. In this case `likes[<index of like>][1]` will return _null_ instead of an empty object.
 
 ### RNR's Future
 

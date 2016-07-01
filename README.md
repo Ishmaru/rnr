@@ -8,7 +8,7 @@ Ever spent time thinking where to go for a weekend or weeks even?  The world is 
 
 Well,
 
-RnR is an app that uses your Instagram account to decide how to spend your well-earned vacations.  Our group app uses Instagram's API to filter through the likes of many images that you've _red-hearted_ and curates some suggestions based on the results.
+RnR is an app that uses your Instagram account to decide how to spend your well-earned vacations.  Our group app uses Instagram's API to filter through the likes of many images that you've liked and presents some suggestions based on the results.
 
 ###But! it doesn't stop there:
 
@@ -90,4 +90,5 @@ Some Instagram Posts may not contain location data. In this case `likes[<index o
 
 ### RNR's Future
 
-So much to add, so little time to do it in...but Instagram's API, shall we say, particular.
+So much to add, so little time to do it in...but Instagram's API, shall we say, peculiar.
+	

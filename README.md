@@ -10,14 +10,15 @@ Well,
 
 RnR is an app that uses your Instagram account to decide how to spend your well-earned vacations.  Our group app uses Instagram's API to filter through the likes of many images that you've _red-hearted_ and curates some suggestions based on the results.
 
-But it doesn't stop there:
+###But! it doesn't stop there:
 
 RnR allows you to organize your vacation destination ideas into collections for your next and future vacation plans.
 
 In addition, RnR gives you Google map directions to your saved locations so that you can see what sites might be nearby, where to visit when you're finally there, and maybe connect a couple of local destinations all into one stay.
 
 App Screenshot:  
-[_Roam Around the World_ - B-52's](https://raw.githubusercontent.com/CJZamora83/rnr/contact/public/images/rnr_screenshot.jpg"/)
+[<https://raw.githubusercontent.com/CJZamora83/rnr/contact/public/images/rnr_screenshot.jpg">]([<https://raw.githubusercontent.com/CJZamora83/rnr/contact/public/images/rnr_screenshot.jpg"/)
+_Roam Around the World_ - B-52's
 
 ##Trello
 [Trello] (https://trello.com/b/TRRC7VJK/rnr)  
@@ -58,10 +59,6 @@ Some of the technologies we've utilized and implemented in the development of ou
 >- [Jim Clark](https://github.com/jim-clark) 
 >* Anyone who puts up with us and our craziness  
 
-
-##Future Implementations and Other Ideas  
-
-...to be continued... 
 
 ## RNR API
 

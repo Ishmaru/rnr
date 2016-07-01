@@ -62,3 +62,33 @@ Some of the technologies we've utilized and implemented in the development of ou
 ##Future Implementations and Other Ideas  
 
 ...to be continued... 
+
+## RNR API
+
+#### Note you need to be logged in to via instagram use our API.
+
+### Endpoint - api/likes  
+Lists an array of your latest likes and their data. Each liked item is an array of vaues.
+
+`likes[[imgUrl, { latitude, name, longitude, id }, uploader], [imgUrl, { latitude, name, longitude, id }, uploader] ...]`
+
+####key values: 
+
+`likes[<index of like>][0]` = Image src url
+
+`likes[<index of like>][1]` = Location Object { latitude, name, longitude, id }
+
+`likes[<index of like>][1].latitude` = Latitude coordinates 
+
+`likes[<index of like>][1].name` = Location Name
+ 
+`likes[<index of like>][1].longitude` = Longitude coordinates 
+
+`likes[<index of like>][1].id` = Instagram's Id of the post
+
+`likes[<index of like>][2]` = Uploader's name
+
+#####Note:
+Some Instagram Posts may not contain location data. In this case `likes[<index of like>][1]` will return _null_
+
+

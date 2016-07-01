@@ -88,4 +88,6 @@ Lists an array of your latest likes and their data. Each liked item is an array 
 #####Note:
 Some Instagram Posts may not contain location data. In this case `likes[<index of like>][1]` will return _null_
 
+### RNR's Future
 
+So much to add, so little time to do it in...but Instagram's API, shall we say, particular.

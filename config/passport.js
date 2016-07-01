@@ -13,7 +13,7 @@ passport.use(new InstagramStrategy({
   function(accessToken, refreshToken, profile, done) {
     // console.log(profile);
     if (!accessToken) return done(err);
-    User.findOne({ instagramId: profile.id}, function(err, user){
+    User.findOne({ instagramId: profile.instagramId}, function(err, user){
       if (err)  { return done(err) };
       if (user) {
         if (user.accessToken != accessToken) {

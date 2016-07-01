@@ -6,10 +6,17 @@
       <a id="logo-container" href="/" class="brand-logo left"><img src="https://dl.dropboxusercontent.com/s/bh70wrir8sfkucy/RNR2.jpg" alt="RNR" height="64" width="64"></a>
       <ul class="right">
         <li><a href="/contact" class="hide-on-small-only">Contact</a></li>
-        <li >
+        <li class="unique">
           <% if (user) { %>
-            <li class="col m4 l4">Welcome, <%= user.name %> </li>
-            <li><a href="/logout" class="waves-effect waves-light btn col s4 m4 l4 right-align">Logout</a></li>
+            <a class="btn-floating btn-large waves-effect waves-light green right-align"><i id="<%= user._id %>"class="material-icons edit">mode_edit</i></a>
+            <span class="col m4 l4" id="Welcome">Welcome, <%= user.name %> </span>
+            <li class="hide col m4 l4 name-form">
+              <div class="input-field">
+                <input value="<%= user.name %>" id="first_name2" type="text" class="validate">
+                <label class="active" for="first_name2">Edit:</label>
+              </div>
+            </li>
+            <span><a href="/logout" class="waves-effect waves-light btn col s4 m4 l4 right-align">Logout</a></span>
           <% } %>
         </li>
       </ul>

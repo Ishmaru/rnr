@@ -53,3 +53,44 @@ function render() {
   })
 };
 
+$(function() {
+  $(".edit").on( "click", function(){
+    $(".name-form").removeClass("hide");
+    $("#Welcome").addClass("hide");
+    swapButton($(this));
+  })
+
+  $('.unique').on('click', '.submit', function() {
+    var selectedId = $(this).attr('id');
+    var updateUserName = {name: $('#first_name2').val()};
+    editUsername(selectedId, updateUserName);
+    $(".name-form").addClass("hide");
+    $('span#Welcome').text(`Welcome, ${updateUserName.name}`);
+    $("#Welcome").removeClass("hide");
+  })
+})
+
+function swapButton(button) {
+  if (button.hasClass('edit')) {
+    button.removeClass('edit');
+    button.addClass('submit');
+  } else if (button.hasClass('submit')) {
+    button.removeClass('submit');
+    button.addClass('edit');
+    // editUserName()
+  }
+};
+
+function editUsername(id, editUserdata) {
+  $.ajax({
+    type: 'PUT',
+    url: `/api/users/${id}`,
+    data: editUserdata
+  }).then(function(user) {
+    console.log(user);
+  }, function(err) {
+    console.log(err);
+  });
+}
+
+

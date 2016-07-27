@@ -38,10 +38,20 @@ router.get('/logout', function(req, res){
 });
 
 // Instagram Helper Routes
-router.get('/api/likes', instaHelp.grabLiked);
-router.get('/api/users', usersController.index);
-router.get('/api/users/:id', usersController.show);
-router.put('/api/users/:id', usersController.update);
-router.delete('/api/users/:id', usersController.destroy);
+router.get('/api/likes', authorize, instaHelp.grabLiked);
+router.get('/api/users', authorize, usersController.index);
+router.get('/api/users/:id', authorize, usersController.show);
+router.put('/api/users/:id', authorize, usersController.update);
+router.delete('/api/users/:id', authorize, usersController.destroy);
 
 module.exports = router;
+
+function authorize(req, res, next) {
+  if (req.user) {
+    next();
+  } else {
+    res.redirect('/auth/instagram');
+  }
+}
+
+
